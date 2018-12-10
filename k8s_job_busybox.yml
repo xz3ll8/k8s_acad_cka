@@ -1,0 +1,17 @@
+# K8s_job_busybox.yml
+# creates a a job users perl to calc pi to 2000 digits before stopping
+#
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: busybox
+spec:
+  template:
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["sleep", "30"]
+      restartPolicy: Never
+  backoffLimit: 4
