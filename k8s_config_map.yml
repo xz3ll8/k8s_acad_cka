@@ -1,0 +1,14 @@
+# K8s_Config_map.yml
+#
+# Creates a sample config map
+
+apiVersion: v1
+data:
+  test_data: |
+    STUDENT_NAME="Nick"
+    SCHOOL="Ostworld"
+    K8s="onit"
+kind: ConfigMap
+metadata:
+  name: test-config
+  namespace: default

@@ -1,0 +1,23 @@
+# K8s_job_busybox.yml
+# creates pod to assign and output 2 test-config  environment variables
+#
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  namespace: default
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: [ "env" ]
+    env:
+            #jvalueFrom:
+            #jconfigMapKeyRef:
+    - name: test-config
+      value: "Here he is"
+    - name: test-config2
+      value: "There he goes"
+    imagePullPolicy: IfNotPresent
+  restartPolicy: Always
