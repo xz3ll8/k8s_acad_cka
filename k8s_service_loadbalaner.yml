@@ -1,0 +1,17 @@
+# k8s_service_loadbalancer.sh
+# never been tested sample from the linux academy CKA course
+#
+kind: Service
+apiVersion: v1
+metdata:
+  name: la-lb-service
+spec:
+  selector:
+    app: la-lb
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9376
+  clusterIP: 10.0.171.233
+  loadBalancerIP: 78.12.23.17
+  type: LoadBalancer

@@ -1,0 +1,16 @@
+# k8s_multi_shed_sample.yml
+#
+#
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotation-default-scheduler
+  labels:
+    name: multischeduler
+  annotations:
+    scheduledBy: custom-scheduler
+spec:
+  schedulerName: custom-scheduler
+  containers:
+  - name: pod-container
+    image: k8s.gcr.io/pause:2.0

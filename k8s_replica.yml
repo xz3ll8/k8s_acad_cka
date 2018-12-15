@@ -1,21 +1,21 @@
-# k8s_nginx_deployment.yml
+# k8s_replica.yml
 #
-apiVersion: apps/v1beta2
-kind: Deployment
+apiVersion: apps/v1
+kind: ReplicaSet
 metadata:
-  name: nginx-deployment
+  name: nginx-replicaset
 spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 3
+  replicas: 6
   template:
     metadata:
       labels:
         app: nginx
     spec:
       containers:
-      - name: nginx
+      - name: nginx-replica
         image: nginx
         ports:
-        - containerPort: 80
+        - containerPort: 82

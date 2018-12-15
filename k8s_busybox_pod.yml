@@ -20,4 +20,6 @@ spec:
     - name: test-config2
       value: "There he goes"
     imagePullPolicy: IfNotPresent
+  nodeSelector:
+    nod: ssd
   restartPolicy: Always

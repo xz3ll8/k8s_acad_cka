@@ -1,0 +1,21 @@
+# k8s_nginx_replctrl.yml
+#
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginx-repctrl
+spec:
+  selector:
+    app: nginx
+  replicas: 3
+  template:
+    metadata:
+      name: nginx-repctrl
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-repctrl
+        image: nginx
+        ports:
+        - containerPort: 81

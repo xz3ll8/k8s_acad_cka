@@ -1,0 +1,22 @@
+# k8s_busybox_from_cmap.ym
+# creates pod to assign and assigns  environment variables from configmap my-map
+#
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox2
+  namespace: default
+spec:
+  containers:
+  - name: busybox2
+    image: busybox
+    command: [ "/bin/sh", "-c", "env" ]
+    env:
+    - name: BIKE_TOURSg
+      valueFrom:
+        configMapKeyRef:
+          name: my-map
+          key: tour
+    imagePullPolicy: IfNotPresent
+  restartPolicy: Never
