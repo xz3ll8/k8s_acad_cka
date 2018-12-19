@@ -1,0 +1,15 @@
+# k8s_nfs_pvc.yml
+#
+# Creates NFS PVC
+#
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: 
+  name: nfs-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Mi

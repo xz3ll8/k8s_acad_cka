@@ -1,0 +1,16 @@
+# k8s_nfs_pv.yml
+#
+# Creates NFS exports as PVs
+#
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: nfs
+spec:
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 172.31.120.176
+    path: "/var/mnt/nfs"
