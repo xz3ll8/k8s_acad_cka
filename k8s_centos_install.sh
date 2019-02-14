@@ -1,14 +1,14 @@
 #k8s_centos_install.sh
 
 clear
-printf "Sleeping for 60 seconds.... have you..."
-printf "\n\nFirstly turn swap off, and edit fstab to ensure it is persistent"
-printf "\nsudo swapoff -a"
-printf "\nsudo vi /etc/fstab"
-printf "\n\nLook for the line in /etc/fstab that says /root/swap and comment it out"
-printf "\n\nHave you turned off selinux?"
-printf "\nsudo setenforce 0 \nsudo vi /etc/selinux/config"
-printf "\n\nPersist Change edit the line that says SELINUX=enforcing to SELINUX=permissive\n\n\n\n" 
+echo -e  "Sleeping for 60 seconds.... have you..."
+echo -e  "\n\nFirstly turn swap off, and edit fstab to ensure it is persistent"
+echo -e  "\nsudo swapoff -a"
+echo -e  "\nsudo vi /etc/fstab"
+echo -e  "\n\nLook for the line in /etc/fstab that says /root/swap and comment it out"
+echo -e  "\n\nHave you turned off selinux?"
+echo -e  "\nsudo setenforce 0 \nsudo vi /etc/selinux/config"
+echo -e  "\n\nPersist Change edit the line that says SELINUX=enforcing to SELINUX=permissive\n\n\n\n" 
 sleep 60
 
 # Install and configure Docker.
