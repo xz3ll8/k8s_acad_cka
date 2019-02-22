@@ -3,7 +3,7 @@
 # Initialize the Kube Master. Do this only on the master node.
 # Changed for Calico Network Plugin
 
-sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --ignore-preflight-check=NumCPU
+sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
